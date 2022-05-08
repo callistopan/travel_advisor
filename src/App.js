@@ -23,14 +23,16 @@ const App=()=>{
 
 
     useEffect(()=>{
-        if (bounds)
+        if (bounds){
         getPlacesData(bounds.sw,bounds.ne)
         .then((data)=>{
             
             setPlaces(data)
 
         })
+    }
     },[coordinates,bounds])
+
 
     return(
         <>
