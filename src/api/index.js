@@ -28,6 +28,7 @@ const URL='https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary'
     }
     catch(err){
         console.log(err)
+        console.log("there is a delay")
     }
 
 }

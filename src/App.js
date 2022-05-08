@@ -23,10 +23,10 @@ const App=()=>{
 
 
     useEffect(()=>{
-        console.log(coordinates,bounds)
+        if (bounds)
         getPlacesData(bounds.sw,bounds.ne)
         .then((data)=>{
-            console.log(data)
+            
             setPlaces(data)
 
         })

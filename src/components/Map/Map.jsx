@@ -10,8 +10,8 @@ const Map=({setCoordinates,setBounds,coordinates})=>{
     const isMobile=useMediaQuery('(min-width:600px)')
     
     return (
-        <><div  className={classes.mapContainer}>
-             <iframe src="http://maps.google.com/maps?q=25.3076008,51.4803216&z=16&output=embed" height="450" width="600"></iframe>
+        <div  className={classes.mapContainer}>
+          
             <GoogleMapReact
 
 
@@ -39,7 +39,7 @@ const Map=({setCoordinates,setBounds,coordinates})=>{
 
 
         </div>
-        </>
+        
         
         
 
