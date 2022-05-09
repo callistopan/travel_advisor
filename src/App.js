@@ -11,7 +11,8 @@ const App=()=>{
 
     const [places,setPlaces]=useState([])  
     const [coordinates,setCoordinates]=useState({})
-    const [bounds,setBounds]=useState(null)
+    const [bounds,setBounds]=useState({})
+    const [childClicked,setChildClicked]=React.useState(null)
 
     useEffect(()=>{
 
@@ -23,15 +24,15 @@ const App=()=>{
 
 
     useEffect(()=>{
-        if (bounds){
+        
         getPlacesData(bounds.sw,bounds.ne)
         .then((data)=>{
             
             setPlaces(data)
 
         })
-    }
-    },[coordinates,bounds])
+    
+    },[coordinates])
 
 
     return(
@@ -40,7 +41,8 @@ const App=()=>{
         <Header/>
         <Grid container spacing={3} style={{width:'100%'}}>
             <Grid item xs={12} md={4}>
-                <List places={places}/>
+                <List places={places}
+                      childClicked={childClicked}  />
 
             </Grid>
             <Grid item xs={12} md={8}>
@@ -48,6 +50,9 @@ const App=()=>{
                 setCoordinates={setCoordinates}
                 setBounds={setBounds}
                 coordinates={coordinates}
+                places={places}
+                setChildClicked={setChildClicked}
+
                 />
                 
             </Grid>

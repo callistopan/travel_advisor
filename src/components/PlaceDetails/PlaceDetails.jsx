@@ -27,6 +27,13 @@ const PlaceDetails=({place})=>{
                         <Typography gutterBottum variant="subtitle1">{place.ranking}</Typography>
 
                   </Box>
+                  {
+                      place?.address &&(
+                          <Typography gutterBottom variant="body2" color="textSecondary" className={classes.subtitle}>
+                                <LocationOnIcon/> {place.address}
+                          </Typography>
+                      )
+                  }
                   
 
             </CardContent>
